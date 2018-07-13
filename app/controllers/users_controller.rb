@@ -42,4 +42,12 @@ class UsersController < ApplicationController
     params.require(:user).permit(:role)
   end
 
+  # verifie si la personne connectée est celle qui a creee l'annonce
+  def require_same_user
+    # != veut n'est pas egal
+    if current_user.id != @user.id
+      flash[:danger] = "You don't have permission to do this action."
+      redirect_to root_path
+    end
+  end
 end
