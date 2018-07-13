@@ -3,6 +3,20 @@
     <h3>Sign up</h3>
     <%= devise_error_messages! %>
     <div class="form-group">
+      <%= f.label :first_Name %><br />
+      <%= f.text_field :first_name,  autofocus: true, placeholder: "First Name", class: "form-control prenom" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, autofocus: true, placeholder: "Last Name", class: "form-control nom" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :fullname %><br />
+      <%= f.text_field :fullname, autofocus: false, placeholder: "Fullname", class: "form-control fullname", :readonly => true %>
+    </div>
+    <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
     </div>
@@ -21,3 +35,12 @@
      <%= f.submit 'Sign up', :class => 'button right' %>
   <% end %>
 </div>
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $('.prenom, .nom').on('change', function(e) {
+            var changedFullName = $('.prenom').val() + " " + $('.nom').val();
+            $('.fullname').val(changedFullName);
+        });
+    });
+</script>
