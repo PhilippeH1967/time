@@ -1,0 +1,42 @@
+
+<div class="authform">
+  <%= form_for Entreprise.new do |f| %>
+
+
+    <h3>Entreprise Creation</h3>
+
+    <div class="form-group">
+      <%= f.label :name_entreprise %><br />
+      <%= f.text_field :name_entreprise,  autofocus: true, placeholder: "Entreprise_Name", required: true, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :street_entreprise %><br />
+      <%= f.text_field :street_entreprise, autofocus: true, placeholder: "street_entreprise", class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :town_entreprise %>
+      <%= f.text_field :town_entreprise, :autofocus => true,  placeholder: "town_entreprise", class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :zipcode_entreprise %>
+      <%= f.text_field :zipcode_entreprise, :autofocus => true,  placeholder: "zipcode_entreprise", class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :country_entreprise %>
+      <%= f.text_field :country_entreprise, :autofocus => true,  placeholder: "country_entreprise", class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label  :subdomain %>
+      <%= f.text_field  :subdomain, :autofocus => true,  placeholder: "subdomain", required: true,class: 'form-control' %>
+    </div>
+
+
+    <%= f.submit 'Create', :class => 'button right' %>
+  <% end %>
+</div>
+

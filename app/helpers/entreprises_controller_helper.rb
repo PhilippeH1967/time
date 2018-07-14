@@ -1,0 +1,2 @@
+module EntreprisesControllerHelper
+end
